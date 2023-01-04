@@ -9,6 +9,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+- task: Bash@3
+  displayName: List all Folders in $(System.DefaultWorkingDirectory)
+  inputs:
+    targetType: 'inline'
+    script: |
+      tree $(System.DefaultWorkingDirectory)
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
