@@ -10,12 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'DevOps SPN - Excellus.com'
+    azureSubscription: '05315551-94e4-4507-8648-4b11fbe047bd'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az account list --output table'
@@ -24,7 +21,7 @@ steps:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
-    backendServiceArm: 'DevOps SPN - Excellus.com'
+    backendServiceArm: '05315551-94e4-4507-8648-4b11fbe047bd'
     backendAzureRmResourceGroupName: 'cloud-shell-storage-eastus'
     backendAzureRmStorageAccountName: 'cs2100320025a643c18'
     backendAzureRmContainerName: 'terraformstate'
@@ -37,5 +34,5 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
-    backendServiceArm: 'DevOps SPN - Excellus.com'
+    backendServiceArm: '05315551-94e4-4507-8648-4b11fbe047bd'
 
