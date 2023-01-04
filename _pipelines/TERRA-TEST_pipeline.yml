@@ -36,4 +36,9 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
     backendServiceArm: 'DevOps SPN - Excellus.com'
 
-
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'DevOps SPN - Excellus.com'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az account list --output table'
