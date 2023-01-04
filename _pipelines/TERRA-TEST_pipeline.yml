@@ -14,8 +14,11 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
     backendServiceArm: 'DevOps SPN - Excellus.com'
+    backendAzureRmResourceGroupName: 'cloud-shell-storage-eastus'
+    backendAzureRmStorageAccountName: 'cs2100320025a643c18'
+    backendAzureRmContainerName: 'terraformstate'
+    backendAzureRmKey: 'test.state'
     
  
 
