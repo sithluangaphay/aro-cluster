@@ -9,21 +9,21 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-- task: Bash@3
-  displayName: List all Folders in $(System.DefaultWorkingDirectory)
-  inputs:
-    targetType: 'inline'
-    script: |
-      tree $(System.DefaultWorkingDirectory)
+steps:
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
     command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
     backendServiceArm: 'DevOps SPN - Excellus.com'
+    
+ 
 
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
     command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
+    backendServiceArm: 'DevOps SPN - Excellus.com'
 
 
