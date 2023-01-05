@@ -13,7 +13,7 @@ stages:
     workspace: 
       clean: all
     pool:
-      vmImage:: ubuntu-latest
+      vmImage: ubuntu-latest
     steps:
     - task: Bash@3
       name: PLAN
