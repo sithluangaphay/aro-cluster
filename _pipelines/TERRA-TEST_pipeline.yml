@@ -10,12 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: '05315551-94e4-4507-8648-4b11fbe047bd'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az account list --output table'
+#- task: AzureCLI@2
+#  inputs:
+#    azureSubscription: '05315551-94e4-4507-8648-4b11fbe047bd'
+#    scriptType: 'bash'
+#    scriptLocation: 'inlineScript'
+#    inlineScript: 'az account list --output table'
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
