@@ -21,12 +21,17 @@ steps:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
-    backendServiceArm: '05315551-94e4-4507-8648-4b11fbe047bd'
+    backendServiceArm: 'DevOps SPN - Excellus.com'
     backendAzureRmResourceGroupName: 'cloud-shell-storage-eastus'
     backendAzureRmStorageAccountName: 'cs2100320025a643c18'
     backendAzureRmContainerName: 'terraformstate'
     backendAzureRmKey: 'test.state'
-    
+
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'validate'
+      
  
 
 - task: TerraformTaskV3@3
@@ -34,5 +39,5 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/LAB'
-    backendServiceArm: '05315551-94e4-4507-8648-4b11fbe047bd'
+    backendServiceArm: 'DevOps SPN - Excellus.com'
 
