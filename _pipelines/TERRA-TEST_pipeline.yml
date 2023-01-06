@@ -26,7 +26,7 @@ stages:
           export ARM_CLIENT_SECRET=$(ARM_CLIENT_SECRET)
           export ARM_TENANT_ID=$(ARM_TENANT_ID)
           cd LAB
-          git config --global url."https://sluangap:$(PAT)@dev.azure.com".insteadOf https://dev.azure.com
+          
           terraform init -reconfigure
           terraform init -upgrade -migrate-state -force-copy
           terraform workspace select LAB || terraform workspace new LAB
@@ -39,7 +39,7 @@ stages:
             echo "Terraform no change"
             echo '##vso[task.setvariable variable=Changed;isOutput=true]false'
           fi
-          git config --global --unset-all url."https://sluangap:$(PAT)@dev.azure.com".insteadOf https://dev.azure.com
+          
 - stage: LAB_Apply
   condition: succeeded('LAB_Plan')
   jobs:
@@ -61,12 +61,12 @@ stages:
           export ARM_CLIENT_SECRET=$(ARM_CLIENT_SECRET)
           export ARM_TENANT_ID=$(ARM_TENANT_ID)
           cd LAB
-          git config --global url."https://sluangap:$(PAT)@dev.azure.com".insteadOf https://dev.azure.com
+          
           terraform init 
           terraform workspace select LAB
           terraform workspace list
           terraform apply -var environment="LAB" -var client_id="$(ARM_CLIENT_ID)" -var client_secret="$(ARM_CLIENT_SECRET)" -var tenant_id="$(ARM_TENANT_ID)" -auto-approve  -refresh=false
-          git config --global --unset-all url."https://sluangap:$(PAT)@dev.azure.com".insteadOf https://dev.azure.com
+          
 
 
 
