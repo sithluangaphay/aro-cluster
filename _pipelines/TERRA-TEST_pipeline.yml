@@ -44,13 +44,15 @@ stages:
   condition: succeeded('LAB_Plan')
   jobs:
   - job: ApproveApply
-    timeoutInMinutes: 60
+    timeoutInMinutes: 10
     pool: server
     steps:
     - task: ManualValidation@0
+      timeoutInMinutes: 5
       inputs:
         notifyUsers: 'sith.luangaphay@excellus.com'
         instructions: 'approval of terraform apply'
+        
 
   - job: Terraform_Apply
     condition: and(eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true), eq(stageDependencies.ApproveApply.result,'Succeeded'))
