@@ -53,7 +53,7 @@ stages:
         instructions: 'approval of terraform apply'
 
   - job: Terraform_Apply
-    condition: eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true)
+    condition: and(eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true), eq(stageDependencies.ApproveApply.result,'Succeeded'))
     workspace: 
       clean: all
     pool:
