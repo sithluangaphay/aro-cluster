@@ -47,12 +47,10 @@ stages:
     timeoutInMinutes: 60
     pool: server
     steps:
-    - task: ManualIntervention@8
-      timeoutInMinutes: 20
+    - task: ManualValidation@0
       inputs:
-        instructions: 'approval of terraform apply and deployment'
-        emailRecipients: 'sith.luangaphay@excellus.com'
-
+        notifyUsers: 'sith.luangaphay@excellus.com'
+        instructions: 'approval of terraform apply'
 
   - job: Terraform_Apply
     condition: eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true)
