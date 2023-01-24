@@ -55,8 +55,10 @@ stages:
         
 
   - job: Terraform_Apply
-    condition: and(eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true), eq(dependencies.ApproveApply.result,'Succeeded'))
+    dependsOn: ApproveApply
     timeoutInMinutes: 5
+    condition: and(eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true), eq(dependencies.ApproveApply.result,'Succeeded'))
+    
     workspace: 
       clean: all
     pool:
