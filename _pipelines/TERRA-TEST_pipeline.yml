@@ -43,6 +43,18 @@ stages:
 - stage: LAB_Apply
   condition: succeeded('LAB_Plan')
   jobs:
+  - job: ApproveApply
+    timeoutInMinutes: 60
+    pool:
+     vmImage: ubuntu-latest
+    steps:
+    - task: ManualIntervention@8
+      timeoutInMinutes: 20
+      inputs:
+        instructions: 'approval of terraform apply and deployment'
+        emailRecipients: 'sith.luangaphay@excellus.com'
+
+
   - job: Terraform_Apply
     condition: eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true)
     workspace: 
