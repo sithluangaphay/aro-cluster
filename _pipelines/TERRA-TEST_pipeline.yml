@@ -45,8 +45,7 @@ stages:
   jobs:
   - job: ApproveApply
     timeoutInMinutes: 60
-    pool:
-     vmImage: ubuntu-latest
+    pool: server
     steps:
     - task: ManualIntervention@8
       timeoutInMinutes: 20
