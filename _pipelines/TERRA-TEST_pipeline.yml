@@ -43,6 +43,7 @@ stages:
 - stage: LAB_Apply
   condition: succeeded('LAB_Plan')
   jobs:
+
   - job: ApproveApply
     timeoutInMinutes: 10
     pool: server
@@ -50,9 +51,11 @@ stages:
     - task: ManualValidation@0
       timeoutInMinutes: 5
       inputs:
-        notifyUsers: 'sluangap@excellus.com'
+        notifyUsers: | 
+         sith.luangaphay@excellus.com
+         sluangap@excellus.com
+       
         instructions: 'approval of terraform apply'
-        
 
   - job: Terraform_Apply
     dependsOn: ApproveApply
