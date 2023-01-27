@@ -50,7 +50,9 @@ stages:
     - task: ManualValidation@0
       timeoutInMinutes: 5
       inputs:
-        notifyUsers: 'sluangap@excellus.com'
+        notifyUsers: | 
+         sith.luangaphay@excellus.com
+         sluangap@excellus.com
         instructions: 'approval of terraform apply'
         
 
