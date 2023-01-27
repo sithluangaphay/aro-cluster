@@ -54,7 +54,6 @@ stages:
         notifyUsers: | 
          sith.luangaphay@excellus.com
          sluangap@excellus.com
-       
         instructions: 'approval of terraform apply'
 
   - job: Terraform_Apply
