@@ -52,7 +52,7 @@ stages:
       timeoutInMinutes: 5
       inputs:
         notifyUsers: | 
-         sith.luangaphay@excellus.com
+         name@excellus.com
          sluangap@excellus.com
         instructions: 'approval of terraform apply'
 
