@@ -28,7 +28,7 @@ locals {
 
 
   locations = "eastus"
-  
+  dns_server = ["10.240.17.4", "10.240.17.5"]
   worker_node_vm_size       = "Standard_D4s_v3"
   master_node_vm_size       = "Standard_D8s_v3"
   worker_profile_name       = "worker"
