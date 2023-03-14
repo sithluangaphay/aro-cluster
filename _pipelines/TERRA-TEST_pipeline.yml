@@ -45,11 +45,11 @@ stages:
   jobs:
 
   - job: ApproveApply
-    timeoutInMinutes: 10
+    timeoutInMinutes: 90
     pool: server
     steps:
     - task: ManualValidation@0
-      timeoutInMinutes: 5
+      timeoutInMinutes: 30
       inputs:
         notifyUsers: | 
          name@excellus.com
@@ -58,7 +58,7 @@ stages:
 
   - job: Terraform_Apply
     dependsOn: ApproveApply
-    timeoutInMinutes: 5
+    timeoutInMinutes: 90
     condition: and(eq(stageDependencies.LAB_Plan.Terraform_Plan.outputs['PLAN.Changed'], true), eq(dependencies.ApproveApply.result,'Succeeded'))
     
     workspace: 
