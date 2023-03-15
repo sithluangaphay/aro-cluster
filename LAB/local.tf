@@ -12,18 +12,18 @@ locals {
       aro_names           = "aro"
       spn_ids             = "9b503cff-d35c-4c61-9da3-6d7691998190"
     },
-    "rg-openshifttest-lab-east-003" = {
-      resource_group_name = "rg-openshifttest-lab-east-003"
-      vnet_name           = "vnet-aro-lab-east-003"
-      address_space       = ["10.247.0.0/21"]
-      main_subnet_name    = "arolab_main_subnet003"
-      main_subnet_cidr    = ["10.247.0.0/24"]
-      worker_subnet_name  = "arolab_worker_subnet003"
-      worker_subnet_cidr  = ["10.247.1.0/24"]
-      domains             = "lab2"
-      aro_names           = "aro2"
-      spn_ids             = "128066cf-1fcd-4945-9777-a9ef3a894318"
-    }
+ #   "rg-openshifttest-lab-east-003" = {
+ #     resource_group_name = "rg-openshifttest-lab-east-003"
+ #     vnet_name           = "vnet-aro-lab-east-003"
+ #     address_space       = ["10.247.0.0/21"]
+ #     main_subnet_name    = "arolab_main_subnet003"
+ #     main_subnet_cidr    = ["10.247.0.0/24"]
+ #     worker_subnet_name  = "arolab_worker_subnet003"
+ #     worker_subnet_cidr  = ["10.247.1.0/24"]
+ #     domains             = "lab2"
+ #     aro_names           = "aro2"
+ #     spn_ids             = "128066cf-1fcd-4945-9777-a9ef3a894318"
+ #   }
   }
 
 
