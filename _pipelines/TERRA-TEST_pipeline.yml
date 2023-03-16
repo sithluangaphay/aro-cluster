@@ -76,6 +76,7 @@ stages:
           export ARM_CLIENT_ID=$(ARM_CLIENT_ID)
           export ARM_CLIENT_SECRET=$(ARM_CLIENT_SECRET)
           export ARM_TENANT_ID=$(ARM_TENANT_ID)
+          export TF_LOG="TRACE"
           cd LAB
           
           terraform init 
