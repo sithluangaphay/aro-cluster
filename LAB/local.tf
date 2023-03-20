@@ -1,17 +1,17 @@
 locals {
- # aro_rg_vnet = {
- #   "rg-openshifttest-lab-east-002" = {
- #     resource_group_name = "rg-openshifttest-lab-east-002"
- #     vnet_name           = "vnet-aro-lab-east-002"
- #     address_space       = ["10.246.0.0/21"]
- #     main_subnet_name    = "arolab_main_subnet002"
- #     main_subnet_cidr    = ["10.246.0.0/24"]
- #     worker_subnet_name  = "arolab_worker_subnet002"
- #     worker_subnet_cidr  = ["10.246.1.0/24"]
- #     domains             = "lab"
- #     aro_names           = "aro"
- #     spn_ids             = "9b503cff-d35c-4c61-9da3-6d7691998190"
- #   },
+  aro_rg_vnet = {
+    "rg-openshifttest-lab-east-002" = {
+      resource_group_name = "rg-openshifttest-lab-east-002"
+      vnet_name           = "vnet-aro-lab-east-002"
+      address_space       = ["10.246.0.0/21"]
+      main_subnet_name    = "arolab_main_subnet002"
+      main_subnet_cidr    = ["10.246.0.0/24"]
+      worker_subnet_name  = "arolab_worker_subnet002"
+      worker_subnet_cidr  = ["10.246.1.0/24"]
+      domains             = "lab"
+      aro_names           = "aro"
+      spn_ids             = "9b503cff-d35c-4c61-9da3-6d7691998190"
+    },
  #   "rg-openshifttest-lab-east-003" = {
  #     resource_group_name = "rg-openshifttest-lab-east-003"
  #    vnet_name           = "vnet-aro-lab-east-003"
@@ -23,7 +23,7 @@ locals {
  #     domains             = "lab2"
  #     aro_names           = "aro2"
  #   }
- # }
+  }
 
 
   locations = "eastus"
