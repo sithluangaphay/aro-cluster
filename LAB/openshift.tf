@@ -65,7 +65,7 @@ resource "azapi_resource" "arolab_cluster" {
 
   lifecycle {
     ignore_changes = [
-      tags,
+      
       body
     ]
   }
