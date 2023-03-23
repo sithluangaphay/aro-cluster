@@ -12,7 +12,7 @@ locals {
       worker_subnet_cidr  = ["10.246.1.0/24"]
       domains             = "lab"
       aro_names           = "aro"
-      spn_ids             = "9b503cff-d35c-4c61-9da3-6d7691998190"
+      
     },
  #   "rg-openshifttest-lab-east-003" = {
  #     resource_group_name = "rg-openshifttest-lab-east-003"
@@ -29,7 +29,7 @@ locals {
 
 
   locations = "eastus"
-  dns_server = ["10.240.17.4", "10.240.17.5"]
+  dns_server = ["8.8.8.8"]
   worker_node_vm_size       = "Standard_D4s_v3"
   master_node_vm_size       = "Standard_D8s_v3"
   worker_profile_name       = "worker"
