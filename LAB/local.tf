@@ -1,3 +1,5 @@
+#creating one aro cluster uncomment to create 2
+
 locals {
   aro_rg_vnet = {
     "rg-openshifttest-lab-east-002" = {
